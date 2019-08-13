@@ -1,0 +1,18 @@
+<div>
+  <span>Me: {{totalCards}} </span><br />
+  <span>Not me: {{allEnemy}}</span>
+</div>
+<div class="row">
+  <div class="grid">
+    <app-feild-block [cards]="enemy.siege"></app-feild-block>
+    <app-feild-block [cards]="enemy.far"></app-feild-block>
+    <app-feild-block [cards]="enemy.war" [special]="enemy.warSpecial"></app-feild-block>
+    <app-feild-block [cards]="cards.war" [special]="cards.warSpecial"></app-feild-block>
+    <app-feild-block [cards]="cards.far"></app-feild-block>
+    <app-feild-block [cards]="cards.siege"></app-feild-block>
+  </div>
+  <div class="sidebar">
+    <app-information></app-information>
+  </div>
+</div>
+<app-current-field ></app-current-field>

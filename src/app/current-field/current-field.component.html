@@ -1,0 +1,5 @@
+<div class="feild">
+    <div *ngFor="let i of items | random; let int = index">
+        <app-card [card]="i" (changedw)="onFieldClick($event, int)" (changeds)="onHover($event)"></app-card>
+    </div>
+</div>

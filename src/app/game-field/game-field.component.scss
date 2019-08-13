@@ -1,0 +1,23 @@
+.grid {
+    background-image: url('../../assets/img/field.jpg');
+    width: 775px;
+    &-field {
+        width: 100%;
+        height: 147px;
+        display: flex;
+        justify-content: center;
+        padding: 5px;
+        position: relative;
+        
+    }
+}
+.sidebar {
+    width: 20%;
+    max-height: 1000px;
+    border: 5px solid green;
+    margin: 10px;
+} 
+
+.row {
+    display: flex;
+}

@@ -1,0 +1,19 @@
+img {
+    margin: 0px 5px;
+    height: -webkit-fill-available;
+    max-width: 300px;
+    max-height: 400px;
+}
+.card {
+    position: relative;
+    height: 100%;
+    &-point {
+        position: absolute;
+        top: 3px;
+        left: 10px;
+        border-radius: 50%;
+        background-color: white;
+        width: 23px;
+        height: 23px;
+    }
+}

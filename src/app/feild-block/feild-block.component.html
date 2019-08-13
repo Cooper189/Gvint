@@ -1,0 +1,7 @@
+<div class="grid-field">
+    <span class="total-cost">{{totalCost}}</span>
+    <div *ngFor="let i of cards">
+        <app-card [card]="i"></app-card>
+    </div>
+</div>
+
