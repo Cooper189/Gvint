@@ -1,10 +1,15 @@
-import { Directive } from '@angular/core';
+import { Directive, Input, OnInit, ElementRef } from '@angular/core';
 
 @Directive({
   selector: '[appCardsImage]'
 })
-export class CardsImageDirective {
+export class CardsImageDirective implements OnInit {
+  @Input('appCardsImage') imageUrl;
 
-  constructor() { }
+  constructor(private elementRef: ElementRef) {
+  }
 
+  ngOnInit() {
+    this.elementRef.nativeElement.style.backgroundImage = `url('${this.imageUrl}')`;
+  }
 }

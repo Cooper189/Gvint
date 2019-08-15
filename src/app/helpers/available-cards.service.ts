@@ -36,19 +36,19 @@ const connectionOptions =  {
 export class AvailableCardsService {
   private currentHand: Array<any>;
   private url = 'http://localhost:4500';
-  private socket;
+  public socket;
   private statusCode = true;
-  public subjectHand = new Subject<any>();
 
-  public subjectCard = new BehaviorSubject<any>(new BehaviorCards());
+  public subjectHand = new Subject<any>();
+  public subjectCard = new BehaviorSubject<any>({cards: new BehaviorCards()});
   public sublectEnemy = new BehaviorSubject<any>(new BehaviorCards());
 
   constructor() {
     this.socket = io(this.url, connectionOptions);
     this.socket.emit('user', {user: sessionStorage.getItem('id')});
     this.socket.on('add', (message) => {
-      console.log(message);
-      this.subjectCard.next(message.cards);
+      console.log('message', message);
+      this.subjectCard.next({ cards: message.cards, turn: message.turn});
       this.subjectHand.next(message.hand);
     });
     this.socket.on('enemy', message => {

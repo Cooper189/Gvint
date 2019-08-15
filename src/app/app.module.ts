@@ -14,6 +14,7 @@ import { InterceptorService } from './helpers/interceptor.service';
 import { LoginComponent } from './login/login.component';
 import { GameFieldComponent } from './game-field/game-field.component';
 import { CardsImageDirective } from './directives/cards-image.directive';
+import { PlayerInterfaceComponent } from './player-interface/player-interface.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { CardsImageDirective } from './directives/cards-image.directive';
     LoginComponent,
     GameFieldComponent,
     CardsImageDirective,
+    PlayerInterfaceComponent,
   ],
   imports: [
     BrowserModule,

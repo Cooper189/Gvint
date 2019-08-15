@@ -16,4 +16,11 @@ img {
         width: 23px;
         height: 23px;
     }
+    &-image {
+        width: 106px;
+        height: 100%;
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
 }

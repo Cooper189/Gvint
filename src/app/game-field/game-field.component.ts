@@ -18,7 +18,7 @@ export class GameFieldComponent {
   constructor(private availableCards: AvailableCardsService, private http: HttpClient) {
     this.availableCards.subjectCard.subscribe(item => {
       console.log('cards', item);
-      this.cards = item;
+      this.cards = item.cards;
       this.totalCards = this.allScore(ElementsArray, this.cards);
     });
     this.availableCards.sublectEnemy.subscribe(item => {
