@@ -27,7 +27,7 @@ export class LoginGuard implements CanActivate {
   }
   canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot) {
     if (sessionStorage.getItem('id')) {
-      this.router.navigate(['/game']);
+      this.router.navigate(['/card-selector']);
     } else {
       return true;
     }

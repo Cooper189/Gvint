@@ -47,10 +47,10 @@ export class AvailableCardsService {
     this.socket = io(this.url, connectionOptions);
     this.socket.emit('user', {user: sessionStorage.getItem('id')});
     this.socket.on('add', (message) => {
-      console.log('message', message);
       this.subjectCard.next({ cards: message.cards, turn: message.turn});
       this.subjectHand.next(message.hand);
     });
+
     this.socket.on('enemy', message => {
       this.sublectEnemy.next(message);
     });

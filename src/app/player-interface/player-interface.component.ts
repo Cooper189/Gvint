@@ -11,7 +11,6 @@ export class PlayerInterfaceComponent implements OnInit {
 
   constructor(private service: AvailableCardsService) {
     this.service.socket.on('currentUser', (user): void => {
-      console.log(user);
       this.user = user.value;
     });
    }

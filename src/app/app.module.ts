@@ -1,46 +1,41 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
-import { CardComponent } from './card/card.component';
-import { CurrentFieldComponent } from './current-field/current-field.component';
-import { FeildBlockComponent } from './feild-block/feild-block.component';
-import { InformationComponent } from './information/information.component';
-import { RandomPipe } from './pipes/random.pipe';
+import { GameModule } from './game/game.module';
 import { InterceptorService } from './helpers/interceptor.service';
 import { LoginComponent } from './login/login.component';
-import { GameFieldComponent } from './game-field/game-field.component';
+import { CardSelectorComponent } from './card-selector/card-selector.component';
+import { CardComponent } from './card/card.component';
 import { CardsImageDirective } from './directives/cards-image.directive';
-import { PlayerInterfaceComponent } from './player-interface/player-interface.component';
+import { SharedModule } from './shared/shared.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    CurrentFieldComponent,
-    FeildBlockComponent,
-    InformationComponent,
-    RandomPipe,
     LoginComponent,
-    GameFieldComponent,
-    CardsImageDirective,
-    PlayerInterfaceComponent,
+    CardSelectorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CommonModule,
+    SharedModule
+    //  sGameModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
     useClass: InterceptorService,
     multi: true
   }],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

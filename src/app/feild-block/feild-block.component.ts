@@ -11,6 +11,7 @@ export class FeildBlockComponent implements OnInit, OnChanges {
   @Input() cards: any;
   @Input() special: boolean;
   @Output() userNameChange = new EventEmitter<string>();
+  @Output() fieldClick = new EventEmitter<any>();
   public totalCost: number;
 
   constructor(private service: AvailableCardsService) {

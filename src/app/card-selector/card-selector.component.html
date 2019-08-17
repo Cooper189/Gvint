@@ -1,0 +1,13 @@
+<div>In hand: </div>
+<div class="available">
+    <div *ngFor="let item of available" class="available-field">
+        <app-card [card]="item" (changedw)="addNewCard($event)"></app-card>
+    </div>
+</div>
+<div>Selected: </div>
+<div class="available">
+    <div *ngFor="let item of hand" class="available-field">
+        <app-card [card]="item" (changedw)="deleteNewCard($event)"></app-card>
+    </div>
+</div>
+<button (click)="saveDate()">Save</button>

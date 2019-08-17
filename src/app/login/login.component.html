@@ -1,5 +1,7 @@
 <div>
-    <input [(ngModel)]="login">
-    <button type="submit" (click)="submitUser()">Ok</button>
+    <form>
+        <input [(ngModel)]="login" [ngModelOptions]="{standalone: true}">
+        <button type="submit" (click)="submitUser()" >Ok</button>
+    </form>
 </div>
 

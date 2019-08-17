@@ -15,14 +15,15 @@ export class GameFieldComponent {
   public totalCards = 0;
   public allEnemy = 0;
 
-  constructor(private availableCards: AvailableCardsService, private http: HttpClient) {
+  constructor(
+    private availableCards: AvailableCardsService,
+    private http: HttpClient,
+    ) {
     this.availableCards.subjectCard.subscribe(item => {
-      console.log('cards', item);
       this.cards = item.cards;
       this.totalCards = this.allScore(ElementsArray, this.cards);
     });
     this.availableCards.sublectEnemy.subscribe(item => {
-      console.log('enemy', item);
       this.enemy = item;
       this.allEnemy = this.allScore(ElementsArray, this.enemy);
     });
@@ -36,6 +37,14 @@ export class GameFieldComponent {
       });
     });
     return counter;
+  }
+
+  public addCard(event) {
+    if (event.item.cardName === 'gorn') {
+
+    } else {
+      this.availableCards.addCards(event.item, event.index);
+    }
   }
 
 }

@@ -3,11 +3,13 @@ import { Routes, RouterModule } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { GameFieldComponent } from './game-field/game-field.component';
 import { LoginInGuard, LoginGuard } from './helpers/guards/login-in.guard';
+import { CardSelectorComponent } from './card-selector/card-selector.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/game', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent, canActivate: [LoginGuard]},
-  { path: 'game', component: GameFieldComponent, canActivate: [LoginInGuard]}
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent},
+  { path: 'card-selector', component: CardSelectorComponent},
+  { path: 'game', loadChildren: () => import('./game/game.module').then(mod => mod.GameModule)}
 ];
 
 

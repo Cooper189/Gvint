@@ -13,11 +13,9 @@ export class LoginComponent {
 
   submitUser() {
     if (this.login) {
-      console.log('sends');
       sessionStorage.setItem('id', this.login);
       this.http.post('/api/newUser', {user: this.login}).subscribe((item) => {
-        console.log('send');
-        this.router.navigate(['/game']);
+        this.router.navigate(['/card-selector']);
       });
     }
   }

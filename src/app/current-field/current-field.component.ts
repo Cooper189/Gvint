@@ -13,6 +13,7 @@ export class CurrentFieldComponent {
   public items: any;
   private event: any;
   @Output() hoverEvent = new EventEmitter<any>();
+  @Output() currentCard = new EventEmitter<any>();
 
   constructor(
     private cardsAvailable: AvailableCardsService,
@@ -21,13 +22,12 @@ export class CurrentFieldComponent {
     ) {
     this.cardsAvailable.subjectHand
     .subscribe(item => {
-      console.log(item);
       this.items = item;
     });
   }
 
   public onFieldClick(item, i) {
-    this.cardsAvailable.addCards(item, i);
+    this.currentCard.next({item, index: i});
   }
 
   public onHover(item) {
